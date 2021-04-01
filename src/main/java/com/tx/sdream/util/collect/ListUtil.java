@@ -118,7 +118,7 @@ public class ListUtil {
      * @param <T>
      * @return
      */
-    public static <T> Set<T> ByVariableParams(T... t) {
+    public static <T> Set<T> toSetByVariableParams(T... t) {
         return toSet(t);
     }
 
@@ -340,6 +340,8 @@ public class ListUtil {
         return newList;
     }
 
+    // ---------------- 集合运算 ----------------
+
     /**
      * 两个集合合并,不去重
      *
@@ -394,8 +396,6 @@ public class ListUtil {
         List<R> rList1 = addAll(list1, mapper1, list2, mapper2);
         return rList1.stream().distinct().collect(Collectors.toList());
     }
-
-    // ---------------- 交接求合、差集 ----------------
 
     /**
      * set集合求差集
